@@ -1,0 +1,23 @@
+#!/bin/sh
+
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+mount -t devtmpfs devtmpfs /dev
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+
+echo
+echo "========================================"
+echo " Linux kernel study lab is ready"
+echo " Kernel: $(uname -r)"
+echo " PID 1:  $$"
+echo "========================================"
+echo
+
+if grep -qw 'kernel-study.test=1' /proc/cmdline; then
+    echo "BOOT_TEST_OK"
+    poweroff -f
+fi
+
+exec setsid cttyhack sh
+

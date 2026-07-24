@@ -1,0 +1,7 @@
+/linux/
+/rootfs/
+/build/
+*.tar.*
+*.cpio
+*.cpio.gz
+*.log
