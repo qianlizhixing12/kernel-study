@@ -24,7 +24,6 @@ exec qemu-system-x86_64 \
     -smp 2 \
     -kernel "${kernel_image}" \
     -initrd "${initramfs_image}" \
-    -append "console=ttyS0 rdinit=/init panic=-1 ${extra_kernel_args}" \
+    -append "console=ttyS0 rdinit=/init oops=panic panic=-1 ${extra_kernel_args}" \
     -nographic \
     -no-reboot
-

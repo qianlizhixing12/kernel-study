@@ -1,7 +1,16 @@
 /linux/
 /rootfs/
+/rootfs-overlay/modules/
 /build/
 *.tar.*
 *.cpio
 *.cpio.gz
 *.log
+*.ko
+*.mod
+*.mod.c
+*.o
+*.order
+*.symvers
+.*.cmd
+.*.d

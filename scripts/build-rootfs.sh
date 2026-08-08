@@ -19,6 +19,15 @@ if ! file "${busybox_path}" | grep -q 'statically linked'; then
     exit 1
 fi
 
+if [[ -d "${project_dir}/modules" ]]; then
+    rm -rf "${overlay_dir}/modules"
+    mkdir -p "${overlay_dir}/modules"
+    find "${project_dir}/modules" \
+        -type f \
+        -name '*.ko' \
+        -exec cp --target-directory="${overlay_dir}/modules" -- {} +
+fi
+
 mkdir -p "${project_dir}/build"
 staging_dir="$(mktemp -d "${project_dir}/build/rootfs.XXXXXX")"
 trap 'rm -rf "${staging_dir}"' EXIT

@@ -1,0 +1,10 @@
+{
+  "[c]": {
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 8
+  },
+  "clang-format.language.c.style": "file",
+  "clang-format.style": "file",
+  "clang-format.fallbackStyle": "none"
+}
